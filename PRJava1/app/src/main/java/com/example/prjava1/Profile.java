@@ -11,12 +11,18 @@ import android.widget.TextView;
 public class Profile extends AppCompatActivity {
 
     Button settings;
-    private TextView mail;
+    TextView mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        mail = findViewById(R.id.mail_act);
+
+        Intent intent = getIntent();
+
+        String name = intent.getStringExtra("name");
+        mail.setText(name);
 
         settings = findViewById(R.id.settings_btn);
         settings.setOnClickListener(new View.OnClickListener() {

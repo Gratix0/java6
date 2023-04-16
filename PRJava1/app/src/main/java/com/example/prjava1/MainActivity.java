@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Profile.class);
+                intent.putExtra("name", logininp.getText().toString());
                 startActivity(intent);
             }
 
